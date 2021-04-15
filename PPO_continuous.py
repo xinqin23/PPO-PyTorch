@@ -137,7 +137,7 @@ class PPO:
         
 def main():
     ############## Hyperparameters ##############
-    env_name = "BipedalWalker-v2"
+    env_name = "BipedalWalker-v3"
     render = False
     solved_reward = 300         # stop training if avg_reward > solved_reward
     log_interval = 20           # print avg reward in the interval

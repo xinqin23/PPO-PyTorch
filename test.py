@@ -20,7 +20,7 @@ def test():
     eps_clip = 0.2              # clip parameter for PPO
     #############################################
 
-    n_episodes = 3
+    n_episodes = 10
     max_timesteps = 300
     render = True
     save_gif = False
@@ -31,7 +31,8 @@ def test():
     memory = Memory()
     ppo = PPO(state_dim, action_dim, n_latent_var, lr, betas, gamma, K_epochs, eps_clip)
     
-    ppo.policy_old.load_state_dict(torch.load(directory+filename))
+    # ppo.policy_old.load_state_dict(torch.load(directory+filename))
+    ppo.policy_old.load_state_dict(torch.load('PPO_x_LunarLander-v2.pth'))
 
     for ep in range(1, n_episodes+1):
         ep_reward = 0
