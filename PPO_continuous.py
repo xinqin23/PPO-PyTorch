@@ -205,12 +205,12 @@ def main():
         # stop training if avg_reward > solved_reward
         if running_reward > (log_interval*solved_reward):
             print("########## Solved! ##########")
-            torch.save(ppo.policy.state_dict(), './PPO_continuous_solved_{}.pth'.format(env_name))
+            torch.save(ppo.policy.state_dict(), './PPO_continuous_solved_x_{}.pth'.format(env_name))
             break
         
         # save every 500 episodes
         if i_episode % 500 == 0:
-            torch.save(ppo.policy.state_dict(), './PPO_continuous_{}.pth'.format(env_name))
+            torch.save(ppo.policy.state_dict(), './PPO_continuous_x_{}.pth'.format(env_name))
             
         # logging
         if i_episode % log_interval == 0:

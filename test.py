@@ -32,7 +32,7 @@ def test():
     ppo = PPO(state_dim, action_dim, n_latent_var, lr, betas, gamma, K_epochs, eps_clip)
     
     ppo.policy_old.load_state_dict(torch.load(directory+filename))
-    
+
     for ep in range(1, n_episodes+1):
         ep_reward = 0
         state = env.reset()
